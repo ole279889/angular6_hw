@@ -1,0 +1,23 @@
+{
+  "name": "ang6_hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ole279889/angular6_hw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ole279889/angular6_hw/issues"
+  },
+  "homepage": "https://github.com/ole279889/angular6_hw#readme",
+  "dependencies": {
+    "@angular/cli": "^6.2.5"
+  }
+}
