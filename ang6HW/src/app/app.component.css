@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+:host > * {
+  margin: 20px;
+}

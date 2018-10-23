@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+:host p {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+:host button {
+  text-align: center;
+}
