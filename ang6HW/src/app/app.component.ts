@@ -23,6 +23,16 @@ export class AppComponent {
     this.currentUser = this.getCurrentUser();
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.users));
   }
+  
+  userDelete(uid: number) {  	
+	var resUsers = this.users.filter(
+      function (user) {
+        return (user.id != uid);
+      }
+    );
+	this.users = resUsers;
+	localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.users));
+  }
 
   getCurrentUser() {
     return new User(this.users.length, '', '');

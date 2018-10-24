@@ -8,4 +8,12 @@ import {User} from '../../shared/user.model';
 })
 export class UserListItemComponent {
   @Input() user: User;
+  @Output() userDel: EventEmitter<number> = new EventEmitter();
+  
+  onButtonClickEditUser() {
+    alert(this.user.name);
+  }
+  onButtonClickDelUser() {	
+	this.userDel.emit(this.user.id);  	
+  }
 }
