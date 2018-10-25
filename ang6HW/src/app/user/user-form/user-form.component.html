@@ -11,4 +11,5 @@
   <label for="surname">Отчество</label>
   <input id="surname" type="text" [(ngModel)]="user.surname">
 </p>
-<button (click)="onButtonClick()">Добавить</button>
+<div *ngIf="del"><button id="bAdd" (click)="onButtonClick()">Добавить</button></div>
+<div *ngIf="!del"><button id="bSave" (click)="onStopEdit()">Готово</button></div>

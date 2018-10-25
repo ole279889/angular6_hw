@@ -8,8 +8,13 @@ import {User} from '../../shared/user.model';
 })
 export class UserFormComponent {
   @Input() user: User;
+  @Input() del: boolean;
   @Output() userChange: EventEmitter<User> = new EventEmitter();
+  @Output() StopEdit: EventEmitter<boolean> = new EventEmitter();
 
+  onStopEdit() {	 
+    this.StopEdit.emit(true);
+  }
   onButtonClick() {
     this.userChange.emit(this.user);
   }

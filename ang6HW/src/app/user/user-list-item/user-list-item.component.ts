@@ -9,10 +9,12 @@ import {User} from '../../shared/user.model';
 export class UserListItemComponent {
   @Input() user: User;
   @Output() userDel: EventEmitter<number> = new EventEmitter();
+  @Output() userEdit: EventEmitter<number> = new EventEmitter();
   
-  onButtonClickEditUser() {
-    alert(this.user.name);
+  onButtonClickEditUser() {	  
+    this.userEdit.emit(this.user.id);	
   }
+  
   onButtonClickDelUser() {	
 	this.userDel.emit(this.user.id);  	
   }
