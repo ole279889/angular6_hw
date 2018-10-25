@@ -14,3 +14,24 @@
 :host button {
   text-align: center;
 }
+
+#family{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+
+#name{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+
+#surname{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}

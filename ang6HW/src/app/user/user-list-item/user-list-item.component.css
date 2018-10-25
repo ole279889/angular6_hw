@@ -1,6 +1,6 @@
 #item-container{
 	position: relative;
-	width: 300px;
+	width: 350px;
     height: 25px;
     background: #FFE4C4;
 	border: 1px solid #DEB887;
@@ -8,14 +8,22 @@
 }
 .item-container-id{
 	margin: 0px 5px 0px 5px;	
+	position: absolute;
+	top: 3px;
 }
 
 .item-container-family{
 	margin: 0px 5px 0px 5px;
+	position: absolute;
+	top: 3px;
+	left: 73px;
 }
 
 .item-container-name{
 	margin: 0px 5px 0px 5px;
+	position: absolute;
+	top: 3px;
+	left: 13px;
 }
 
 .btnEdit{

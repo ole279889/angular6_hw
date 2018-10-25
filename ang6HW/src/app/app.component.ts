@@ -21,7 +21,7 @@ export class AppComponent {
   addUser() {
     this.users.push(this.currentUser);
     this.currentUser = this.getCurrentUser();
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.users));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.users));	
   }
   
   userDelete(uid: number) {  	
@@ -35,6 +35,15 @@ export class AppComponent {
   }
 
   getCurrentUser() {
-    return new User(this.users.length, '', '');
+    return new User(/*this.users.length*/this.maxUID() + 1, '', '');
   }
+  
+  maxUID() {
+	if this.users.length < 2 {
+	  return this.users.length;
+	} else {
+      return this.users.reduce(function (p, v) {
+         return ( p.id > v.id ? p.id : v.id );
+      });
+    }
 }
