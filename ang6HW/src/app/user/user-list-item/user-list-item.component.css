@@ -1,0 +1,33 @@
+#item-container{
+	position: relative;
+	width: 300px;
+    height: 25px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+.item-container-id{
+	margin: 0px 5px 0px 5px;	
+}
+
+.item-container-family{
+	margin: 0px 5px 0px 5px;
+}
+
+.item-container-name{
+	margin: 0px 5px 0px 5px;
+}
+
+.btnEdit{
+	position: absolute;
+    width: 75px;
+    height: 25px;
+    right: 78px;        
+}
+
+.btnDel{
+	position: absolute;
+    width: 75px;
+    height: 25px;
+    right: 3px;        
+}

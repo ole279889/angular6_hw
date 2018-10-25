@@ -1,5 +1,7 @@
-<span>{{ user.id }}</span>
-<span>{{ user.family }}</span>
-<span>{{ user.name }}</span>
-<span><button (click)="onButtonClickEditUser()">Редактировать</button></span>
-<span><button (click)="onButtonClickDelUser()">Удалить</button></span>
+<div id = "item-container">
+    <span class = "item-container-id">{{ user.id }}.</span>
+    <span class = "item-container-family">{{ user.family }}</span>
+    <span class = "item-container-name">{{ user.name }}</span>
+    <span><button class = "btnEdit" (click)="onButtonClickEditUser()">Изменить</button></span>
+    <span><button class = "btnDel" (click)="onButtonClickDelUser()">Удалить</button></span>
+</div>
