@@ -55,7 +55,7 @@ export class AppComponent {
 	}
   }
   
-  maxUID() {
+  maxUID() {	  
 	if (this.users.length == 0) {
 	  return this.users.length;
 	} 
@@ -73,6 +73,6 @@ export class AppComponent {
       for (var i = 0; i < this.users.length; i++) {
         if (this.users[i].id === uid) {console.log(this.users[i]); return this.users[i];}
       }
-      return -1;
+      return null;
   }
 }
