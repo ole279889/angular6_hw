@@ -9,7 +9,7 @@ import {UserService} from '../shared/user.service';
 
 @NgModule({
  imports: [
-    FormsModule,//ReactiveFormsModule,
+    ReactiveFormsModule,
     CommonModule,
   ],
   declarations: [

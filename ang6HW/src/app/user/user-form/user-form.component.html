@@ -1,14 +1,19 @@
-<h2>Добавить пользователя</h2>
-<p>
-  <label for="family">Фамилия</label>
-  <input id="family" type="text" [(ngModel)]="user.family">
-</p>
-<p>
-  <label for="name">Имя</label>
-  <input id="name" type="text" [(ngModel)]="user.name">
-</p>
-<p>
-  <label for="surname">Отчество</label>
-  <input id="surname" type="text" [(ngModel)]="user.surname">
-</p>
-<div><button id="bAdd" (click)="onButtonClick()">{{this._userId ? 'Изменить' : 'Добавить'}}</button></div>
+<form (submit)="onButtonClick()" [formGroup]="form">
+  <h2>Добавить пользователя</h2>
+  <p>
+    <label for="family">Фамилия</label>
+    <input id="family" type="text" [formControlName]="'family'">
+  </p>
+  <span class="error" *ngIf="form.get('family').errors?.lettersOnly">{{ form.get('family').errors.lettersOnly.text }}</span>
+  <p>
+    <label for="name">Имя</label>
+    <input id="name" type="text" [formControlName]="'name'">
+  </p>
+  <span class="error" *ngIf="form.get('name').errors?.lettersOnly">{{ form.get('name').errors.lettersOnly.text }}</span>
+  <p>
+    <label for="surname">Отчество</label>
+    <input id="surname" type="text" [formControlName]="'surname'">
+  </p>
+  <span class="error" *ngIf="form.get('surname').errors?.lettersOnly">{{ form.get('surname').errors.lettersOnly.text }}</span>
+  <div><button id="bAdd">{{this._userId ? 'Изменить' : 'Добавить'}}</button></div>
+</form>
