@@ -21,7 +21,7 @@ export class UserFormComponent {
     this.StopEdit.emit(true);
   }
   onButtonClick() {
-	alert(this.userService.getMsg());  
+	console.log(this.userService.users);  
     this.userChange.emit(this.user);
   }
 }

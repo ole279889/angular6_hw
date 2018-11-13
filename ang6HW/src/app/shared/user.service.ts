@@ -1,26 +1,24 @@
 import {Injectable} from '@angular/core';
-import {User} from './user';
-//import {BehaviorSubject} from 'rxjs';
-
-//const LOCAL_STORAGE_KEY = 'users';
+import {User} from './user.model';
+import {BehaviorSubject} from 'rxjs';
+const LOCAL_STORAGE_KEY = 'users';
 
 @Injectable()
 export class UserService {
-  getMsg(): number {
-    return "12345";
-  }
-  /*private _users: User[];
+  private _users: User[];  
   public currentId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public viewId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
+  getMsg(): number {
+    return 1234;
+  }
+  
   get users(): User[] {
     return this._users;
   }
 
   constructor() {
-    this._users = (<User[]>JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || []).map((item: any) => {
-      return ObjectHelper.createFromObject(User, item);
-    });
+    this._users = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
   }
 
   getUser(id: number): User {
@@ -41,5 +39,5 @@ export class UserService {
 
   save() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this._users));
-  }*/
+  }  
 }
