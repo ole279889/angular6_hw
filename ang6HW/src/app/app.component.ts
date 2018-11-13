@@ -63,9 +63,10 @@ export class AppComponent {
 	  return this.users[0].id;
 	} 
 	else{
-      return this.users.reduce(function (p, v) {
-        return ( p.id > v.id ? p.id : v.id );
-      });
+      var result = this.users.reduce(function (p, v) {
+        return ( p.id > v.id ? p : v );
+      });	  
+	  return result.id;
     }  
   }
   
