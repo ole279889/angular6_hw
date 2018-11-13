@@ -8,20 +8,34 @@ import {UserService} from '../../shared/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent {
-  @Input() user: User;
-  @Input() del: boolean;
-  @Output() userChange: EventEmitter<User> = new EventEmitter();
-  @Output() StopEdit: EventEmitter<boolean> = new EventEmitter();
-  
-  constructor(private userService: UserService) {
+  _userId: number;	
+  user: User;  
     
+  constructor(private userService: UserService) {
+    this.userService.currentId.subscribe((id: number) => {	
+      this._userId = id;		  
+      this.user = this.userService.getUser(id);		  
+    });
+  }
+    
+  onButtonClick() {	    
+	if (this._userId === null) {
+      this.userService.addUser(new User(
+        this.userService.maxUID() + 1,
+        this.user.family,
+        this.user.name,
+        this.user.surname
+      ));
+    } else {
+      this.userService.updateUser(this._userId, new User(
+        this._userId,
+        this.user.family,
+        this.user.name,
+        this.user.surname
+      ));
+    }
+    this._userId = null;	
+    this.userService.save();    
   }
   
-  onStopEdit() {	 
-    this.StopEdit.emit(true);
-  }
-  onButtonClick() {
-	console.log(this.userService.users);  
-    this.userChange.emit(this.user);
-  }
 }

@@ -9,18 +9,22 @@ import {UserService} from '../../shared/user.service';
 })
 export class UserListItemComponent {
   @Input() user: User;
-  @Output() userDel: EventEmitter<number> = new EventEmitter();
-  @Output() userEdit: EventEmitter<number> = new EventEmitter();
   
   constructor(private userService: UserService) {
   
   }
   
-  onButtonClickEditUser() {	  
-    this.userEdit.emit(this.user.id);	
+  update() {
+    this.userService.currentId.next(this.user.id);
+	this.userService.viewId.next(this.user.id);	
   }
-  
-  onButtonClickDelUser() {	
-	this.userDel.emit(this.user.id);  	
+
+  delete() {
+    this.userService.deleteUser(this.user.id);
+    this.userService.save();
   }
+
+  /*show() {
+    this.userService.viewId.next(this.user.id);
+  }*/
 }

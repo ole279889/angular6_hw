@@ -1,4 +1,4 @@
 <h2>Список пользователей</h2>
 <div *ngFor="let user of users">
-  <app-user (userDel)="userDel($event)" (userEdit)="userEdit($event)" [user]="user"></app-user>
+  <app-user [user]="user"></app-user>
 </div>

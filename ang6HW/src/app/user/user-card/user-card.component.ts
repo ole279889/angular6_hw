@@ -8,9 +8,10 @@ import {UserService} from '../../shared/user.service';
   styleUrls: ['./user-card.component.css']
 })
 export class UserCardComponent {
-  @Input() card: User;
-  
+  user: User;  
   constructor(private userService: UserService) {
-	  
+	this.userService.viewId.subscribe((id: number) => {			
+      this.user = this.userService.getUser(id);	 
+    });  
   }
 }

@@ -9,10 +9,6 @@ export class UserService {
   public currentId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
   public viewId: BehaviorSubject<number> = new BehaviorSubject<number>(null);
 
-  getMsg(): number {
-    return 1234;
-  }
-  
   get users(): User[] {
     return this._users;
   }
@@ -21,8 +17,12 @@ export class UserService {
     this._users = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
   }
 
-  getUser(id: number): User {
-    return this._users.find((user: User) => user.id === id);
+  getUser(id: number = null): User {
+	if (id === null) {		
+	  return new User(this.maxUID() + 1, '', '', '');
+	} else {		
+      return this._users.find((user: User) => user.id === id);
+	}
   }
 
   addUser(user: User) {
@@ -38,6 +38,22 @@ export class UserService {
   }
 
   save() {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this._users));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this._users));	
   }  
+  
+  maxUID() {	  
+	if (this._users.length == 0) {
+	  return 0;
+	} 
+	else if (this._users.length == 1) {
+	  return this._users[0].id;
+	} 
+	else{
+      var result = this.users.reduce(function (p, v) {
+        return ( p.id > v.id ? p : v );
+      });	  
+	  return result.id;
+    }  
+  }
+  
 }
