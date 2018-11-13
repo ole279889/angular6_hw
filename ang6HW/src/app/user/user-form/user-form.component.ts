@@ -35,6 +35,7 @@ export class UserFormComponent {
       ));
     }
     this._userId = null;	
+	this.user = this.userService.getUser(this._userId);
     this.userService.save();    
   }
   
