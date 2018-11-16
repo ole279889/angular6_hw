@@ -6,17 +6,21 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserService} from '../shared/user.service';
+import {TranslationService} from '../shared/translation.service';
+import { TranslatePipe } from '../shared/translate.pipe';
 
 @NgModule({
  imports: [
     ReactiveFormsModule,
+	FormsModule,
     CommonModule,
   ],
   declarations: [
     UserListItemComponent,
 	UserFormComponent,
     UserCardComponent,
-    UserListComponent
+    UserListComponent,	
+	TranslatePipe,
   ],
   exports: [
     UserFormComponent,
@@ -24,7 +28,8 @@ import {UserService} from '../shared/user.service';
     UserListComponent
   ],
   providers: [
-    UserService,
+    UserService,	
+	TranslationService,
   ]
 })
 export class UserModule { }

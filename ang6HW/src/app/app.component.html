@@ -1,3 +1,6 @@
+<select [(ngModel)]="translationService.language">
+    <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
+</select>
 <app-user-form></app-user-form>
 <app-user-card></app-user-card>
 <app-user-list></app-user-list>

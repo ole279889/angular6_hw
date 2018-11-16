@@ -1,19 +1,19 @@
 <form (submit)="onButtonClick()" [formGroup]="form">
-  <h2>Добавить пользователя</h2>
+  <h2>{{ 'Добавить пользователя' | translate }}</h2>
   <p>
-    <label for="family">Фамилия</label>
+    <label for="family">{{ 'Фамилия' | translate }}</label>
     <input id="family" type="text" [formControlName]="'family'">
   </p>
   <span class="error" *ngIf="form.get('family').errors?.lettersOnly">{{ form.get('family').errors.lettersOnly.text }}</span>
   <p>
-    <label for="name">Имя</label>
+    <label for="name">{{ 'Имя' | translate }}</label>
     <input id="name" type="text" [formControlName]="'name'">
   </p>
   <span class="error" *ngIf="form.get('name').errors?.lettersOnly">{{ form.get('name').errors.lettersOnly.text }}</span>
   <p>
-    <label for="surname">Отчество</label>
+    <label for="surname">{{ 'Отчество' | translate }}</label>
     <input id="surname" type="text" [formControlName]="'surname'">
   </p>
   <span class="error" *ngIf="form.get('surname').errors?.lettersOnly">{{ form.get('surname').errors.lettersOnly.text }}</span>
-  <div><button id="bAdd">{{this._userId ? 'Изменить' : 'Добавить'}}</button></div>
+  <div><button id="bAdd">{{this._userId ? 'Изменить' : 'Добавить' | translate}}</button></div>
 </form>

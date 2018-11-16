@@ -1,4 +1,6 @@
-<h2>Список пользователей</h2>
+<div id = "list-header">
+  <h2>{{ 'Список пользователей' | translate }}</h2>  
+</div>
 <div *ngFor="let user of users">
   <app-user [user]="user"></app-user>
 </div>

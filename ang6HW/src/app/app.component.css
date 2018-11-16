@@ -8,3 +8,9 @@
 :host > * {
   margin: 20px;
 }
+
+select {
+        height:30px;
+        line-height:30px;
+        background: #FFE4C4;
+} 

@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ContentChild, ElementRef, OnInit, ViewChild, ViewChildren} from '@angular/core';
+import { TranslationService } from './shared/translation.service';
 
 const LOCAL_STORAGE_KEY = 'users';
 
@@ -9,7 +10,7 @@ const LOCAL_STORAGE_KEY = 'users';
 })
 export class AppComponent {
     
-  constructor() {
+  constructor(private translationService: TranslationService) {
     
   }
  
