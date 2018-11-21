@@ -20,7 +20,8 @@ export class TranslationService {
                 'пример'                : 'Пример',
 				'Удалить'               : 'Удалить',
 				'Изменить'              : 'Изменить',
-				'Добавить'              : 'Добавить',				
+				'Добавить'              : 'Добавить',		
+                'Сохранить'				: 'Сохранить',
 				
 				'Фамилия'               : 'Фамилия',
 				'Имя'                   : 'Имя',
@@ -40,7 +41,8 @@ export class TranslationService {
                 'пример'                : 'Example',
 				'Удалить'               : 'Delete',
 				'Изменить'              : 'Edit',
-				'Добавить'              : 'Add',				
+				'Добавить'              : 'Add',		
+                'Сохранить'				: 'Save',				
 				
 				'Фамилия'               : 'Family',
 				'Имя'                   : 'Name',
@@ -58,8 +60,7 @@ export class TranslationService {
 
     constructor() { }
 
-    translate(value: string): string {
-        console.log('translate called with value ' + value + ' and language ' + this.language);
+    translate(value: string): string {        
         if ( this.dictionary[this.language] != null) {
             return this.dictionary[this.language].values[value];
         }

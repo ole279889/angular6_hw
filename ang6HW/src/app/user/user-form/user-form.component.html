@@ -15,5 +15,5 @@
     <input id="surname" type="text" [formControlName]="'surname'">
   </p>
   <span class="error" *ngIf="form.get('surname').errors?.lettersOnly">{{ form.get('surname').errors.lettersOnly.text }}</span>
-  <div><button id="bAdd">{{this._userId ? 'Изменить' : 'Добавить' | translate}}</button></div>
+  <div><button id="bAdd">{{this._userId ? ('Сохранить' | translate) : ('Добавить' | translate)}}</button></div>
 </form>

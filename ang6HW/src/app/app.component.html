@@ -1,6 +1,9 @@
-<select [(ngModel)]="translationService.language">
-    <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
-</select>
+<div >
+  <div id = "time" display="table-cell">Время utc: {{ this.timeService.timeUTC }}</div>
+  <select display="table-cell" [(ngModel)]="translationService.language">
+      <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
+  </select>
+</div>
 <app-user-form></app-user-form>
 <app-user-card></app-user-card>
 <app-user-list></app-user-list>
