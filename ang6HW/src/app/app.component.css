@@ -1,7 +1,7 @@
 :host {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: left;
   background: #D2B48C;
 }
 

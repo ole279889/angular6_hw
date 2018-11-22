@@ -3,8 +3,12 @@
   <select display="table-cell" [(ngModel)]="translationService.language">
       <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
   </select>
+  <div display="table-cell">
+    <a routerLink="/users">Список пользователей</a>
+  </div>
+  <div display="table-cell">
+    <a routerLink="/users/form">Добавить пользователя</a>
+  </div>  
 </div>
-<app-user-form></app-user-form>
-<app-user-card></app-user-card>
-<app-user-list></app-user-list>
+<router-outlet></router-outlet>
 

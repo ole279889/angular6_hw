@@ -1,6 +1,7 @@
 import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
 import {User} from '../shared/user.model';
 import {UserService} from '../shared/user.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,7 @@ import {UserService} from '../shared/user.service';
 export class UserListItemComponent {
   @Input() user: User;
   
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
   
   }
   
@@ -24,7 +25,7 @@ export class UserListItemComponent {
     this.userService.save();
   }
 
-  /*show() {
-    this.userService.viewId.next(this.user.id);
-  }*/
+  show() {
+	this.router.navigate(['/users/card/' + this.user.id]);    
+  }
 }

@@ -1,6 +1,6 @@
 #item-container{
 	position: relative;
-	width: 350px;
+	width: 428px;
     height: 25px;
     background: #FFE4C4;
 	border: 1px solid #DEB887;
@@ -38,4 +38,11 @@
     width: 75px;
     height: 25px;
     right: 3px;        
+}
+
+.btnShow{
+	position: absolute;
+    width: 75px;
+    height: 25px;
+    right: 153px;        
 }

@@ -6,12 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { UserModule } from './user/user.module';
 import {TimeService} from './shared/time.service';
 import {TranslationService} from './shared/translation.service';
+import {AppRoutingModule} from './app-routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,         
   ],
   imports: [
+    RouterModule,
+    AppRoutingModule,
     BrowserModule,
 	UserModule,
 	FormsModule,
