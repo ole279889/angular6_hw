@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { UserModule } from './user/user.module';
-import {UserService} from './shared/user.service';
 import {TimeService} from './shared/time.service';
 import {TranslationService} from './shared/translation.service';
 
@@ -18,8 +17,7 @@ import {TranslationService} from './shared/translation.service';
 	FormsModule,
 	HttpClientModule,
   ],
-  providers: [
-    UserService,
+  providers: [    
 	TimeService,
 	TranslationService,
   ],

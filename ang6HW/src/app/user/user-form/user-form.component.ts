@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {User} from '../../shared/user.model';
-import {UserService} from '../../shared/user.service';
+import {User} from '../shared/user.model';
+import {UserService} from '../shared/user.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppValidators} from '../../shared/app-validators';
 
