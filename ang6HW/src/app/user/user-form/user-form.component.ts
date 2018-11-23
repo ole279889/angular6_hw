@@ -3,6 +3,7 @@ import {User} from '../shared/user.model';
 import {UserService} from '../shared/user.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppValidators} from '../../shared/app-validators';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user-form',
@@ -14,7 +15,7 @@ export class UserFormComponent implements OnInit {
   user: User;  
   form: FormGroup;
     
-  constructor(private userService: UserService, private fb: FormBuilder) {
+  constructor(private userService: UserService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.form = new FormGroup({
       name: new FormControl('', [AppValidators.lettersOnly()]),
       surname: new FormControl('', [AppValidators.lettersOnly()]),
@@ -22,13 +23,10 @@ export class UserFormComponent implements OnInit {
     });		
   }
   
-  ngOnInit(): void {
-    this.userService.currentId.subscribe((id: number) => {
-      this._userId = id;
-      if(id) {
-        this.form.patchValue(this.userService.getUser(id));
-      }
-    });    
+  ngOnInit(): void {    
+	this._userId = Number(this.route.snapshot.params.id);
+    this.user = this.userService.getUser(this._userId);   
+    this.form.patchValue(this.user); 	
   }
   
   get currentUser() {
@@ -42,22 +40,12 @@ export class UserFormComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }  
-	if (this._userId === null) {
-      this.userService.addUser(new User(
-        this.userService.maxUID() + 1,
-        this.form.get('family').value,
-        this.form.get('name').value,
-        this.form.get('surname').value
-      ));
-    } else {
-      this.userService.updateUser(this._userId, new User(
-        this._userId,
-        this.form.get('family').value,
-        this.form.get('name').value,
-        this.form.get('surname').value
-      ));
-    }
-    this._userId = null;		
+	this.userService.updateUser(this._userId, new User(
+      this._userId,
+      this.form.get('family').value,
+      this.form.get('name').value,
+      this.form.get('surname').value
+    ));	
     this.userService.save();    
   }
   

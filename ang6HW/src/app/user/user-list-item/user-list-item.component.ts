@@ -16,8 +16,9 @@ export class UserListItemComponent {
   }
   
   update() {
-    this.userService.currentId.next(this.user.id);
-	this.userService.viewId.next(this.user.id);	
+	this.router.navigate(['/users/form/' + this.user.id]);  
+    //this.userService.currentId.next(this.user.id);
+	//this.userService.viewId.next(this.user.id);	
   }
 
   delete() {

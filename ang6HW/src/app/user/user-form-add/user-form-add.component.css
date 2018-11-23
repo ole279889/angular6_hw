@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+:host p {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+:host button {
+  text-align: center;
+}
+
+#family{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+
+#name{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+
+#surname{	
+    height: 22px;
+    background: #FFE4C4;
+	border: 1px solid #DEB887;
+	border-radius: 5px;
+}
+
+#bAdd{
+	width: 250px;
+    height: 35px;
+}
+
+#bSave{
+	width: 250px;
+    height: 35px;
+}
+
+.error{	
+	 color: red; 
+     font-size: 75%;      
+}
