@@ -22,8 +22,7 @@ export class TimeService {
   updTimeUTC() {
     let request = this.http.get('http://worldclockapi.com/api/json/utc/now', {responseType: 'json'});    
 	request.subscribe((dateTimeUTC : dtUTC) => {
-	  this.timeUTC = dateTimeUTC.currentDateTime.substring(11, 16); 
-      console.log(this.timeUTC);		
+	  this.timeUTC = dateTimeUTC.currentDateTime.substring(11, 16);       		
     },
 	error => {
 	  this.timeUTC = '__:__';
