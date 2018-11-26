@@ -28,6 +28,7 @@ import { TranslatePipe } from '../shared/translate.pipe';
 	UserFormAddComponent,
     UserCardComponent,
     UserListComponent,
+	TranslatePipe,
   ],
   providers: [
     UserService,		

@@ -1,13 +1,13 @@
 <div >
-  <div id = "time" display="table-cell">Время utc: {{ this.timeService.timeUTC }}</div>
+  <div id = "time" display="table-cell">{{ 'Время utc: ' | translate }}{{this.timeService.timeUTC}}</div>
   <select display="table-cell" [(ngModel)]="translationService.language">
       <option *ngFor="let language of translationService.languages" [ngValue]="language">{{language}}</option>
   </select>
   <div display="table-cell">
-    <a routerLink="/users">Список пользователей</a>
+    <a routerLink="/users">{{ 'Список пользователей' | translate }}</a>
   </div>
   <div display="table-cell">
-    <a routerLink="/users/form-add">Добавить пользователя</a>
+    <a routerLink="/users/form-add">{{ 'Добавить пользователя' | translate }}</a>
   </div>  
 </div>
 <router-outlet></router-outlet>
